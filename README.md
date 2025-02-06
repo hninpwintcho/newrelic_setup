@@ -34,6 +34,28 @@ drwxr-xr-x 2 ubuntu www-data 4096 Feb  6 15:24 ./
 drwxr-xr-x 3 root   root     4096 Feb  6 15:24 ../
 -rw-r--r-- 1 ubuntu www-data  615 Feb  6 15:24 index.nginx-debian.html
 
+cd /var/www/html/
+git clone https://github.com/hninpwintcho/laravel-todo-new.git
+
+Step 4:composer install
+
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+php dependecies installation :
+cd laravel-todo-new
+composer i
+
+Step 5: nodejs install
+cd /var/www/html
+sudo apt install nodejs 
+node -v
+
+sudo apt install npm
+git pull
+npm i
+
+
+
+
 
 
