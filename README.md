@@ -55,6 +55,7 @@ git pull
 npm i
 
 Step 6: nginx configuration 
+
 server {
     listen 80;
     server_name laravel.thixpin.me;
