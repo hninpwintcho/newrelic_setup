@@ -94,7 +94,41 @@ sudo nginx -t
 susudo systemctl restart 
 sudo nginx -s reload
 
-![image](https://github.com/user-attachments/assets/715e1c62-64f9-437d-8639-8f91400f13b7)
+www.server ip
+
+Step 6 : create mysql
+
+sudo mysql>
+
+CREATE DATABASE laravel_todo;
+CREATE USER 'todo'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON laravel_todo.* TO 'todo'@'localhost';
+FLUSH PRIVILEGES;
+
+cp .env.example .env
+vim .env # edit database configuration
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel_todo
+DB_USERNAME=todo
+DB_PASSWORD=password
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=redis
+FILESYSTEM_DISK=local
+QUEUE_CONNECTION=redis
+SESSION_DRIVER=redis
+SESSION_LIFETIME=120
+
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan optimize
+
+ll /storage/logs
+sudo chown -R ubuntu:www-data .
 
 
 
