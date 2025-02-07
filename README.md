@@ -56,12 +56,11 @@ npm i
 
 Step 6: nginx configuration 
 
-
-
+sudo vim /etc/nginx/sites-available/todo.conf
 server {
     listen 80;
-    server_name laravel.thixpin.me;
-    root /var/www/laravel.thixpin.me/public;
+    server_name (server ip add);
+    root /var/www/laravel-todo-new/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
@@ -90,6 +89,12 @@ server {
     }
 }
 
+sudo ln -s /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/
+sudo nginx -t
+susudo systemctl restart 
+sudo nginx -s reload
+
+![image](https://github.com/user-attachments/assets/715e1c62-64f9-437d-8639-8f91400f13b7)
 
 
 
