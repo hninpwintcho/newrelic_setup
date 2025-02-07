@@ -59,7 +59,7 @@ Step 6: nginx configuration
 sudo vim /etc/nginx/sites-available/todo.conf
 server {
     listen 80;
-    server_name (server ip add);
+    server_name 13.228.27.74;
     root /var/www/laravel-todo-new/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
@@ -89,7 +89,8 @@ server {
     }
 }
 
-sudo ln -s /etc/nginx/sites-available/laravel /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/todo.conf /etc/nginx/sites-enabled/
+ll /etc/nginx/sites-enabled/
 sudo nginx -t
 susudo systemctl restart 
 sudo nginx -s reload
@@ -100,9 +101,9 @@ Step 6 : create mysql
 
 sudo mysql>
 
-CREATE DATABASE laravel_todo;
-CREATE USER 'todo'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON laravel_todo.* TO 'todo'@'localhost';
+CREATE DATABASE laravel_todo_new;
+CREATE USER 'todo_new'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON laravel_todo_new* TO 'todo_new'@'localhost';
 FLUSH PRIVILEGES;
 
 cp .env.example .env
